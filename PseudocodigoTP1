@@ -1,0 +1,53 @@
+class Dia{
+    list ventas;
+    date fecha;
+    void agregarVenta(venta){
+        this.ventas.add(venta);
+     }
+     int gananciaTotal(){
+        this.ventas.sum(venta => venta.precioFinal());
+     }
+}
+/*
+Otra opcion que tuve fue hacer solo una clase de ventas, el cual tenia todos los
+atributos y metodos para calcular el precio ya sea en efectivo o en tarjeta.
+Pero la descarte porque me parecio que usar herencia era mas cohesivo
+
+*/
+class VentaEfectivo{
+    list prendas;
+    int precioFinal;
+    int precioFinal(){
+        this.prendas.sum(prenda => prenda.precioTotal())
+    }
+
+}
+
+class VentaTarjeta extends VentaEfectivo{
+    int cuotas;
+    int coeficienteFijo;
+    @override
+    int precioFinal(){
+        super + cuotas*coeficienteFijo + 0.01*valorCadaPrenda()
+    }
+
+}
+class Prenda{
+    int precio;
+    Estado estado;
+    int cant;
+    int precioTotal(){
+    this.estado.calculoPrecio(this.precio);
+    }
+}
+
+object liquidacion{
+    int calculoPrecio(precio)= precio*0.5;
+}
+object promocion{
+    int valorFijo;
+    int calculoPrecio(precio)= precio-valorFijo;
+}
+object nuevo{
+    int calculoPrecio(precio) = precio;
+}
