@@ -1,0 +1,89 @@
+class Material {
+Tela tela;
+Color color;
+}
+
+enum Tela {
+Trama trama = LISA;
+
+constructor(Trama trama);
+
+LANA,
+CUERO,
+HILO
+}
+
+enum Trama{
+LISA,
+RAYADA,
+LUNARES,
+CUADROS,
+ESTAMPADO
+}
+
+class Prenda{
+TipoPrenda tipoPrenda;
+Material material;
+
+constructor(TipoPrenda tipoPrenda, NULL){
+this.tipoPrenda = tipoPrenda
+this.material = NULL
+}
+cargarMaterial(Material material){
+if(esValida(material)
+this.material = material;
+else throw expecionMaterial;
+}
+esValida(Material material){ this.tipoPrenda.categoria.esTelaPosible(material.tela)
+}
+guardarBorrador(){
+return new Prenda(this.tipoPrenda, this.material);
+}
+
+}
+
+class TipoPrenda{
+Categoria categoria;
+List telasPosibles;
+
+esTelaPosible(tela){
+telasPosibles.contains(tela)
+}
+
+TipoPrenda(categoria, telasPosibles);
+
+CAMPERA(categoria.SUPERIOR, telasPosibles.[LANA, HILO, CUERO, JEAN]),
+REMERA(categoria.SUPERIOR, telasPosibles.[HILO, LANA]),
+PANTALON(categoria.INFERIOR, telasPosibles.[HILO, CUERO, LANA, JEAN]),
+ZAPATO(categoria.CALZADO,telasPosibles.[CUERO, HILO]),
+COLLAR(categoria.ACCESORIO, telasPosibles.[PLATA, CUERO])
+
+}
+
+class Combinacion{
+List  prendas;
+
+Combinacion(prendas);
+}
+
+enum Uniforme{
+Uniforme(List <Prenda>prendas);
+
+SAN_JUAN([
+new Prenda(CHOMBA, new Material(verde, PIQUE)),
+new Prenda(PANTALON, new Material(gris, ACETATO)),
+new Prenda(ZAPATILLAS, new Material(blanco, HILO))
+]),
+
+JOHNSON([
+new Prenda(CAMISA, new Material(blanco, HILO)),
+new Prenda(PANTALON_DE_VESTIR, new Material(negro, HILO)),
+new Prenda(ZAPATOS, new Material(negro, CUERO))
+]),
+
+}
+
+class Usuario{
+List guardarropa;
+
+}
