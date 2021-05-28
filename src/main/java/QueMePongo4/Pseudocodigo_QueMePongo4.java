@@ -33,3 +33,4 @@ class Prenda{
     return temperatura < temperaturaMaxima;
   }
 }
+
